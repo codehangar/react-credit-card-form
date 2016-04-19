@@ -36,5 +36,10 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react-redux": "^4.4.5",
+    "react-redux-form": "^0.10.5",
+    "redux": "^3.4.0",
+    "redux-thunk": "^2.0.1"
+  }
 }
