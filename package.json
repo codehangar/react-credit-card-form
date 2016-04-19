@@ -1,0 +1,40 @@
+{
+  "name": "react-credit-card-form",
+  "version": "0.0.1",
+  "engine": "node 5.9.1",
+  "description": "React component for credit card forms",
+  "main": "main.js",
+  "scripts": {
+    "start": "node tools/start.js"
+  },
+  "repository": {},
+  "keywords": [
+    "credit card",
+    "cc",
+    "cc form"
+  ],
+  "author": "CodeHangar, Inc",
+  "license": "",
+  "bugs": {},
+  "homepage": "http://codehangar.io",
+  "devDependencies": {
+    "babel-core": "^6.3.26",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "bootstrap-less": "^3.3.8",
+    "bootstrap-sass": "^3.3.6",
+    "css-loader": "^0.23.1",
+    "classnames": "^2.2.3",
+    "file-loader": "^0.8.5",
+    "node-sass": "^3.4.2",
+    "opn": "^4.0.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.9"
+  },
+  "dependencies": {}
+}
