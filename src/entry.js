@@ -1,3 +1,7 @@
+
+// TEMPLATES
+require.context('./', true, /\.html$/);
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App/App';
