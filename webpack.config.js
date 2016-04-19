@@ -20,10 +20,10 @@ module.exports = {
             loaders: ["style", "css", "sass"]
         }, {
             test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-            loader: "url-loader?name=./dev/dist_files/[hash].[ext]&limit=10000&mimetype=application/font-woff"
+            loader: "url-loader?name=./dist_files/[hash].[ext]&limit=10000&mimetype=application/font-woff"
         }, {
             test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-            loader: "file-loader?name=./dev/dist_files/[hash].[ext]"
+            loader: "file-loader?name=./dist_files/[hash].[ext]"
         }, {
             test: /\.(jpg|jpeg|gif|png|ico|svg|xml|json|html)$/,
             exclude: /node_modules/,
