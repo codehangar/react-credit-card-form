@@ -1,43 +1,45 @@
 import React from 'react';
 
 class ReactCreditCardForm extends React.Component{
-	
-	  // state = {
-	  //   name: "",
-	  //   number: "",
-	  //   expMonth: "",
-	  //   expYear: "",
-	  //   cvc: ""
-	  // }
 
-	  getIntialState() {
-	  	console.log('here');
-	  	return this.props; 
-	  }
+	constructor(props) {
+	    super(props);
+	    // this.setStat
 
-	// handleNumberChange = (e) =>  {
-		// console.log('number change')
-	    // var val = e.target.value;
-	    // this.setState({value: val});
-	    // this.validate(val, this.props.type);
-	// }.bind(this);
+	    this.state = {
+		    name: "",
+		    number: "",
+		    expMonth: "",
+		    expYear: "",
+		    cvc: ""
+		  }
+
+	}
+
+
+	handleNumberChange(e) {
+		console.log('number change')
+	//     // var val = e.target.value;
+	//     // this.setState({value: val});
+	//     // this.validate(val, this.props.type);
+	};
 
 	render (){
-		console.log(this.state);
+		
 		return(
 
 		  	<form action="" className="row">
 		  		<div className="col-md-12">
 		  			<div className="form-group">
 						<label for="name">Name</label>
-						<input type="text" className="form-control" onChange={this.handleNameChange}/>
+						<input type="text" className="form-control"/>
 					</div>
 		  		</div>
 				
 				<div className="col-md-12">
 					<div className="form-group">
 						<label for="number">Card Number</label>
-						<input type="text" className="form-control"/>
+						<input type="text" className="form-control" onChange={this.handleNumberChange}/>
 					</div>
 				</div>
 				<div className="col-md-6">
