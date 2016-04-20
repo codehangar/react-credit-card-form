@@ -2,8 +2,8 @@
 // TEMPLATES
 require.context('./', true, /\.html$/);
 
-//Bootstrap
-require('../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss')
+// SCSS
+require('./index.scss')
 
 import React from 'react';
 import ReactDOM from 'react-dom';

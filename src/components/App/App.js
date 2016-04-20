@@ -19,7 +19,7 @@ const handleCCSubmit = (cc) => {
 
 const App = () => (
   <Provider store={ store }>
-    <div>
+    <div className="container">
       <ReactCreditCardForm handleSubmit={(cc) => handleCCSubmit(cc)}/>
       <UserForm handleSubmit={(user) => handleSubmit(user)}/>
     </div>
