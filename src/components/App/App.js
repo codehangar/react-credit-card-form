@@ -64,6 +64,14 @@ const App = () => (
 	      	</div>
 	      </div>
 	    </div>
+	    <hr/>
+	    <footer>
+		    <div className="text-center">
+		      <div className="row">
+		        <p className="copyright-text">Copyright © 2015 <a href="http://codehangar.io/" target="_blank">Code Hangar</a>. All Rights Reserved.</p>
+		      </div>
+		    </div>
+		</footer>
   	</div>
   	
   </Provider>
