@@ -20,8 +20,16 @@ const handleCCSubmit = (cc) => {
 const App = () => (
   <Provider store={ store }>
     <div className="container">
-      <ReactCreditCardForm handleSubmit={(cc) => handleCCSubmit(cc)}/>
-      <UserForm handleSubmit={(user) => handleSubmit(user)}/>
+      <div className="row">
+        <div className="col-md-6 col-md-offset-3">
+          <ReactCreditCardForm handleSubmit={(cc) => handleCCSubmit(cc)}/>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-md-6 col-md-offset-3">
+          <UserForm handleSubmit={(user) => handleSubmit(user)}/>
+        </div>
+      </div>
     </div>
   </Provider>
 );
