@@ -1,21 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Field, Form, actions } from 'react-redux-form';
 
 class ReactCreditCardForm extends React.Component{
-
-	constructor(props) {
-	    super(props);
-	    // this.setStat
-
-	    this.state = {
-		    name: "",
-		    number: "",
-		    expMonth: "",
-		    expYear: "",
-		    cvc: ""
-		  }
-
-	}
-
 
 	handleNumberChange(e) {
 		console.log('number change')
@@ -24,18 +11,31 @@ class ReactCreditCardForm extends React.Component{
 	//     // this.validate(val, this.props.type);
 	};
 
-	render (){
-		
-		return(
+  handleSubmit(cc) {
+    // let { dispatch } = this.props;
+    let { handleSubmit } = this.props;
 
-		  	<form action="" className="row">
-		  		<div className="col-md-12">
-		  			<div className="form-group">
-						<label for="name">Name</label>
-						<input type="text" className="form-control"/>
-					</div>
-		  		</div>
-				
+    console.log("cc", cc)
+
+    handleSubmit(cc);
+
+    // Do whatever you like in here.
+    // You can use actions such as:
+    // dispatch(actions.submit('user', somePromise));
+    // etc.
+  }
+
+	render (){
+		return(
+		  	<Form className="row" model="cc" onSubmit={(cc) => this.handleSubmit(cc)}>
+	  			<div className="form-group">
+
+			  		<Field model="cc.name" className="col-md-12">
+							<label for="name">Name</label>
+							<input type="text" className="form-control"/>
+						</Field>
+	  			</div>
+
 				<div className="col-md-12">
 					<div className="form-group">
 						<label for="number">Card Number</label>
@@ -70,12 +70,16 @@ class ReactCreditCardForm extends React.Component{
 					</div>
 				</div>
 				<div className="col-md-12">
-					<button className="btn btn-primary btn-lg pull-right">Submit</button>
+					<button type="submit" className="btn btn-primary btn-lg pull-right">Submit</button>
 				</div>
-			</form>
+			</Form>
 
 		);
 	}
 }
 
-module.exports = ReactCreditCardForm;
+function mapStateToProps(state) {
+  return { cc: state.cc };
+}
+
+export default connect(mapStateToProps)(ReactCreditCardForm);

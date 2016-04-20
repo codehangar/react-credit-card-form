@@ -12,10 +12,15 @@ const handleSubmit = (user) => {
   console.log("App.js user", user)
 }
 
+const handleCCSubmit = (cc) => {
+  // actions.submit('cc', somePromise)
+  console.log("App.js cc", cc)
+}
+
 const App = () => (
   <Provider store={ store }>
     <div>
-      <ReactCreditCardForm data={{test: 'hello world'}} handleSubmit={(user) => handleSubmit(user)}/>
+      <ReactCreditCardForm handleSubmit={(cc) => handleCCSubmit(cc)}/>
       <UserForm handleSubmit={(user) => handleSubmit(user)}/>
     </div>
   </Provider>
