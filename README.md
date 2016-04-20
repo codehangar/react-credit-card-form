@@ -15,6 +15,26 @@ npm install
 $ npm start
 ```
 
+## Usage
+```
+import ReactCreditCardForm from 'ReactCreditCardForm';
+
+const handleCCSubmit = (cc) => {
+  console.log("App.js cc", cc)
+}
+
+...
+
+<ReactCreditCardForm handleSubmit={(cc) => handleCCSubmit(cc)}/>
+
+...
+
+
+```
+Import `ReactCreditCardForm`, add the component, and handle the submit callback as you wish.
+
+
+
 ## Directory Structure
 - dev (development build files)
 - dist (distribution files)
