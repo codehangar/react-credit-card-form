@@ -1,4 +1,5 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import {
   modelReducer,
   formReducer
@@ -17,7 +18,7 @@ const intialCCState = {
   cvc: ""
 };
 
-const store = createStore(combineReducers({
+const store = applyMiddleware(thunk)(createStore)(combineReducers({
   user: modelReducer('user', initialUserState),
   userForm: formReducer('user', initialUserState),
   cc: modelReducer('cc', intialCCState),

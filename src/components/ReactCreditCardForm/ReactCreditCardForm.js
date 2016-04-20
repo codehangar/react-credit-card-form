@@ -25,21 +25,48 @@ class ReactCreditCardForm extends React.Component{
     // etc.
   }
 
-	render (){
-		return(
-		  	<Form className="row" model="cc" onSubmit={(cc) => this.handleSubmit(cc)}>
-	  			<div className="form-group">
-			  		<Field model="cc.name" className="col-md-12">
-						<label for="name">Name</label>
-						<input type="text" className="form-control"/>
-					</Field>
-	  			</div>
+  render (){
+    let { dispatch, cc, ccForm } = this.props;
+    console.log("ccForm", ccForm)
+    console.log("ccForm.blur", ccForm.blur)
+
+    let ccError;
+    if (!ccForm.fields.name.valid) {
+      ccError = 'Invalid Credit Card Number';
+    }
+
+    console.log("ccError", ccError)
+
+    let HELLO = 'HELLO'
+
+    const ccIsValid = () => {
+      dispatch(actions.validate('cc.name', {
+        required: (value) => value && value.length,
+        valid: true
+      }))
+    }
+
+    return(
+      <Form className="row" model="cc" onSubmit={(cc) => this.handleSubmit(cc)}>
+        <div className="form-group">
+          <Field model="cc.name" className="col-md-12">
+            <label for="name">Name</label>
+            <input type="text" className="form-control"
+              onChange={(e) => dispatch(actions.change('cc.name', e))}
+            />
+          </Field>
+        </div>
 
 				<div className="col-md-12">
 					<div className="form-group">
 						<Field model="cc.number">
 							<label for="number">Card Number</label>
-							<input type="text" className="form-control" onChange={this.handleNumberChange}/>
+							<input type="text" className="form-control"
+                onChange={(e) => dispatch(actions.change('cc.name', e))}
+                onBlur={ ccIsValid }
+                />
+              <label className="pull-right text-danger">{ccError}</label>
+
 						</Field>
 					</div>
 				</div>
@@ -86,7 +113,7 @@ class ReactCreditCardForm extends React.Component{
 }
 
 function mapStateToProps(state) {
-  return { cc: state.cc };
+  return state;
 }
 
 export default connect(mapStateToProps)(ReactCreditCardForm);
