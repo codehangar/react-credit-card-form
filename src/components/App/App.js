@@ -19,18 +19,53 @@ const handleCCSubmit = (cc) => {
 
 const App = () => (
   <Provider store={ store }>
-    <div className="container">
-      <div className="row">
-        <div className="col-md-6 col-md-offset-3">
-          <ReactCreditCardForm handleSubmit={(cc) => handleCCSubmit(cc)}/>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-md-6 col-md-offset-3">
-          <UserForm handleSubmit={(user) => handleSubmit(user)}/>
-        </div>
-      </div>
-    </div>
+  	<div>
+  		<nav className="navbar navbar-default">
+		  <div className="container-fluid">
+
+		  	<div className="navbar-header">
+			    <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span className="sr-only">Toggle navigation</span>
+			        <span className="icon-bar"></span>
+			        <span className="icon-bar"></span>
+			        <span className="icon-bar"></span>
+			    </button>
+			    <a className="navbar-brand" href="#">
+			        React Credit Card Form
+			    </a>
+			</div>
+		  </div>
+		</nav>
+	    <div className="container">
+	      <div className="row">
+	        <div className="col-md-6 col-md-offset-3">
+	          <ReactCreditCardForm handleSubmit={(cc) => handleCCSubmit(cc)}/>
+	        </div>
+	      </div>
+	      <div className="row">
+	        <div className="col-md-6 col-md-offset-3">
+	          <UserForm handleSubmit={(user) => handleSubmit(user)}/>
+	        </div>
+	      </div>
+	    </div>
+	    <hr />
+	    <div className="container">
+	      <div className="row">
+	      	<div className="col-md-6 col-md-offset-3">
+	      		<h2>React Credit Card Form has some sweet features. 
+	      			<br/><br/>
+	      			<div className="small">"Let me tell you 'bout my sweet features." 
+	      				<br/>– React Credit Card Form</div>
+	      		</h2>
+	      		<br/>	      	
+	      		<ul>
+	      			<li>Sweet feature bro.</li>
+	      		</ul>
+	      	</div>
+	      </div>
+	    </div>
+  	</div>
+  	
   </Provider>
 );
 
