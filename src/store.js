@@ -20,7 +20,7 @@ const intialCCState = {
 const store = createStore(combineReducers({
   user: modelReducer('user', initialUserState),
   userForm: formReducer('user', initialUserState),
-  cc: modelReducer('user', intialCCState),
+  cc: modelReducer('cc', intialCCState),
   ccForm: formReducer('cc', intialCCState)
 }));
 
